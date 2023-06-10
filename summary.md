@@ -43,6 +43,38 @@ HTTP 상태 코드
 200번대 통신 성공
 400번대 클라이언트 어류
 500번대 서버측 오류
+ 
+HTTP 요청을 보낼 때 Accept 헤더에 Application/json, test/plain 타입으로 요청하면 응답 포맷 지정
+
+cURL program
+* -X HTTP method
+* -H header
+* -i: print HTTP header
+* -u user
+* -cacert: SSL certificate
+* -d: body
+```
+curl -i -X POST http://compute/v2/{tenant-id}/servers/{server-id}action \
+-H "Content-Type: application/json" \
+-H "Accept: application:json" \
+-H "X-Auth-Token: {****}" \
+-d '{"reboot": {"Type": "SOFT"}}'
+```
+
+ROS: Resource Oriented Architecture
+* REST API 사상을 기반으로 리소스 중심적인 API를 사용하는 아키텍처
+* REST: Representational State Transfer
+* REST 기반 서비스의 지침
+  * 상태를 갖지 않는다
+  * URI는 디렉토리 구조처럼 계층적으로
+  * HTTP 메소드를 명시적으로 사용한다
+  * 응답할때는 XML이나 JSON
+* API를 행위 중심이 아닌 자원 중심으로 설계할 때 반드시 필요한 고려사항
+* 분산 환경 제어를 위한 세가지 필수 개념
+  * 비동기
+  * 멱등성
+  * 재시도
+
 
 
 ## 2023-05-31
