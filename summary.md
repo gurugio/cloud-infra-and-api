@@ -32,6 +32,18 @@ HTTP 메소드
 * DELETE: 리소스 삭제 - CRUD에서 Delete
 * HEAD: HTTP헤더, 메타 정보 - Read
 
+HTTP 상태 코드
+* 200 OK GET성공
+* 201 Create: POST성공
+* 202 Accepted: 요청은 접수되었으나 리소스 처리는 완료되지않음
+* 204 No Contents: 요청은 성공했으나 제공한 컨텐츠가 없음
+* 500 Internal Server Error: 클라우드 측의 내부 오류
+* 503 Service Unavailable: 일시적으로 클라우드 측에 과부하나 다운
+
+200번대 통신 성공
+400번대 클라이언트 어류
+500번대 서버측 오류
+
 
 ## 2023-05-31
 
