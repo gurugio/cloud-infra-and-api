@@ -1,6 +1,38 @@
 
 # 그림으로 배우는 클라우드 인프라와 API의 구조
 
+## 2023-06-10
+
+HTTP 소개
+* 클라우드 환경에서도 HTTP 프로토콜과 동일하게 URL 사용함
+* HTTP 프로토콜은 stateless임. 상태/연결 정보를 관리하지 않음
+* 쿠키나 킵얼라이브 기술을 사용해야함
+* 쿠키: 서버가 보낸 정보를 저장
+* 웹 API 요청때마다 TCP 연결을 생성하고 끊게됨 - 트래픽 발생
+* 킵얼라이브: TCP연결을 계속 유지할 수 있음
+
+HTTP 요청
+* 요청행 request line, 요청 헤더 request header, 메세지 바디 message body 세부분으로 구성됨
+* 요청행: 메소드, request URI, HTTP 버전 정보
+  * 메소드: URI에 대한 제어 행위이자 액션
+  * 수신지 URI: 제어할 리소스
+  * URI를 FQDN와 경로로 표현 / URI를 절대 경로로 표현
+* 요청 헤더: 쿠키나 킵얼라이브와 같은 통신 관련 제어 정보나 메타 데이터
+* 메세지 바디: 송수신 데이터
+
+HTTP 응답
+* status line: 상태 코드 정보
+* response header: 서버가 클라이언트에 서버의 정보를 전달
+* message-body: 요청받은 데이터
+
+HTTP 메소드
+* POST: 리소스 생성 - CURD에서 Create
+* GET: 리소스 조회 - CRUD에서 Read
+* PUT: 리존 리소스 수정 - CRUD에서 Update
+* DELETE: 리소스 삭제 - CRUD에서 Delete
+* HEAD: HTTP헤더, 메타 정보 - Read
+
+
 ## 2023-05-31
 
 * 웹API = 인증처리 + 제어할 대상 + 제어 행위
